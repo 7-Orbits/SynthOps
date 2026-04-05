@@ -32,7 +32,16 @@
   align-items: center;
   gap: 2.5rem;
   z-index: 10;
-  animation: fadeIn 1s ease-out;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+  opacity: 1;
+  margin-top: -1rem;
+  margin-bottom: -1rem;
 }
 
 .badge {
@@ -138,12 +147,56 @@
   transform: translateX(4px);
 }
 
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.secondaryCta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.secondaryCta:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
 .footer {
   position: absolute;
   bottom: 2rem;
-  font-size: 0.875rem;
-  color: var(--text-dim);
-  opacity: 0.6;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-white);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.4rem 1.25rem;
+  border-radius: 99px;
+  backdrop-filter: blur(8px);
+  opacity: 0.8;
+  letter-spacing: 0.02em;
+  transition: all 0.3s ease;
+}
+
+.footer:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
 @keyframes fadeIn {
