@@ -1,159 +1,165 @@
-# Turborepo starter
+<p align="center">
+  <img src="https://img.shields.io/badge/SynthOps-AI%20Workflow%20Generator-blueviolet?style=for-the-badge" alt="SynthOps Badge" />
+</p>
 
-This Turborepo starter is maintained by the Turborepo core team.
+<h1 align="center">⚡ SynthOps</h1>
 
-## Using this example
+<p align="center">
+  <strong>Describe your automation, and get a ready-to-run n8n workflow.</strong><br/>
+  No manual wiring. No repetitive setup. Just prompt and generate.
+</p>
 
-Run the following command:
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#how-it-works">How It Works</a> •
+  <a href="#tech-stack">Tech Stack</a> •
+  <a href="#getting-started">Getting Started</a> •
+  <a href="#project-structure">Project Structure</a> •
+  <a href="#contributing">Contributing</a> •
+  <a href="#license">License</a>
+</p>
 
-```sh
-npx create-turbo@latest
+---
+
+## 🧠 What is SynthOps?
+
+**SynthOps** is an AI-powered workflow generator for [n8n](https://n8n.io/). It takes a plain-language description of your desired automation and produces a complete, ready-to-import n8n workflow — fully wired, configured, and executable.
+
+Stop spending hours dragging nodes and connecting edges. Describe what you want, and let SynthOps build it for you.
+
+---
+
+## ✨ Features
+
+- **🗣️ Prompt-to-Workflow** — Describe your automation in plain English and receive a fully structured n8n workflow JSON.
+- **🔗 Auto-Wired Connections** — Nodes are automatically connected with the correct inputs, outputs, and data mappings.
+- **📦 Ready-to-Import** — Generated workflows can be directly imported into any n8n instance.
+- **🧩 Smart Node Selection** — AI intelligently selects the right n8n nodes (HTTP Request, Webhook, IF, Set, Code, etc.) based on your description.
+- **⚡ Zero Manual Setup** — No repetitive drag-and-drop or manual configuration required.
+
+---
+
+## 🔄 How It Works
+
+```
+┌─────────────────┐     ┌──────────────────┐     ┌─────────────────────┐
+│  Describe your   │────▶│  AI processes &   │────▶│  Ready-to-run n8n   │
+│  automation      │     │  generates nodes  │     │  workflow JSON      │
+└─────────────────┘     └──────────────────┘     └─────────────────────┘
 ```
 
-## What's inside?
+1. **Prompt** — You describe the workflow you need in natural language.
+2. **Generate** — SynthOps uses AI to parse your intent, select appropriate n8n nodes, and wire them together.
+3. **Export** — A complete n8n-compatible workflow JSON is generated, ready to import and run.
 
-This Turborepo includes the following packages/apps:
+---
 
-### Apps and Packages
+## 🛠️ Tech Stack
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+| Layer            | Technology                                                  |
+| ---------------- | ----------------------------------------------------------- |
+| **Monorepo**     | [Turborepo](https://turborepo.dev/)                         |
+| **Runtime**      | [Bun](https://bun.sh/)                                     |
+| **Framework**    | [Next.js 16](https://nextjs.org/)                           |
+| **Language**     | [TypeScript](https://www.typescriptlang.org/)               |
+| **UI Library**   | [React 19](https://react.dev/)                              |
+| **Linting**      | [ESLint](https://eslint.org/)                               |
+| **Formatting**   | [Prettier](https://prettier.io/)                            |
+| **Target**       | [n8n](https://n8n.io/) Workflow Automation                  |
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+---
 
-### Utilities
+## 🚀 Getting Started
 
-This Turborepo has some additional tools already setup for you:
+### Prerequisites
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- [Node.js](https://nodejs.org/) >= 18
+- [Bun](https://bun.sh/) >= 1.3.1
 
-### Build
+### Installation
 
-To build all apps and packages, run the following command:
+```bash
+# Clone the repository
+git clone https://github.com/7-Orbits/SynthOps.git
+cd SynthOps
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo build
+# Install dependencies
+bun install
 ```
 
-Without global `turbo`, use your package manager:
+### Development
 
-```sh
-cd my-turborepo
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
-```
+```bash
+# Start all apps in development mode
+bun run dev
 
-You can build a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
-
-```sh
-turbo build --filter=docs
-```
-
-Without global `turbo`:
-
-```sh
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
+# Or using turbo directly
 turbo dev
 ```
 
-Without global `turbo`, use your package manager:
+| App    | URL                     |
+| ------ | ----------------------- |
+| `web`  | http://localhost:3000    |
+| `docs` | http://localhost:3001    |
 
-```sh
-cd my-turborepo
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
+### Build
+
+```bash
+# Build all apps and packages
+bun run build
 ```
 
-You can develop a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+### Lint & Format
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
+```bash
+# Run linting
+bun run lint
 
-```sh
-turbo dev --filter=web
+# Format code
+bun run format
+
+# Type checking
+bun run check-types
 ```
 
-Without global `turbo`:
+---
 
-```sh
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
+## 📁 Project Structure
+
+```
+SynthOps/
+├── apps/
+│   ├── web/              # Main web application (Next.js — port 3000)
+│   └── docs/             # Documentation site (Next.js — port 3001)
+├── packages/
+│   ├── ui/               # Shared React component library (@repo/ui)
+│   ├── eslint-config/    # Shared ESLint configuration (@repo/eslint-config)
+│   └── typescript-config/ # Shared TypeScript config (@repo/typescript-config)
+├── turbo.json            # Turborepo pipeline configuration
+├── package.json          # Root workspace configuration
+└── bun.lock              # Bun lockfile
 ```
 
-### Remote Caching
+---
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+## 🤝 Contributing
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+Contributions are welcome! If you'd like to contribute to SynthOps:
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
+---
 
-```sh
-cd my-turborepo
-turbo login
-```
+## 📄 License
 
-Without global `turbo`, use your package manager:
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
-```sh
-cd my-turborepo
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
-```
+---
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
-
-```sh
-turbo link
-```
-
-Without global `turbo`:
-
-```sh
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.dev/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.dev/docs/reference/configuration)
-- [CLI Usage](https://turborepo.dev/docs/reference/command-line-reference)
+<p align="center">
+  Built with ❤️ by <a href="https://github.com/7-Orbits">7.Orbits</a>
+</p>
